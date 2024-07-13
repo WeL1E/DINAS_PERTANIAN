@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('thumbnail');
+            $table->longtext('content');
+            $table->enum('post_as', ['jumbotron', 'about',])->nullable();
             $table->timestamps();
         });
     }
